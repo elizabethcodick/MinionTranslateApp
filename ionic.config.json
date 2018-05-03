@@ -1,0 +1,8 @@
+{
+  "name": "Codick_Project4",
+  "app_id": "49e5e23d",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
