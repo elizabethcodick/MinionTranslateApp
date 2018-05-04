@@ -11,6 +11,10 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import jQuery from "jquery";
+import { HTTP } from '@ionic-native/http';
+import { NativeAudio } from '@ionic-native/native-audio';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -34,6 +38,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    HTTP,
+    NativeAudio,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
