@@ -1,13 +1,12 @@
 page-home {
-    ion-card{
-        background-color: yellow;
-    }
     .bgColor{
         background-color: yellow;
     }
     .image{
         height: 100%;
         width: 100%;
+        background-color: none;
+        border-bottom: none;
     }
     .imgLeng{
         width: 30%;
@@ -17,5 +16,12 @@ page-home {
     }
     .cardht{
         height: 30%;
+    }
+    .ban{
+        height: 70%;
+        width: 60%;
+    }
+    .bottom{
+        bottom: 0;
     }
 }

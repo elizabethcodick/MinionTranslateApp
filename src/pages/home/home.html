@@ -5,23 +5,61 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-grid>
+  <ion-grid class="ali">
     <ion-row>  
-      <ion-col class="imgLeng">
-        <ion-item>
-          <img class="image" src="../../assets/imgs/minion1.png"/>
-        </ion-item>
+      <ion-col>
+        <img class="image" src="../../assets/imgs/minion2.png"/>
       </ion-col>
       <ion-col col-8>
         <ion-card class="bgColor">
           <ion-card-content>
             <ion-item>
-              <ion-label>English: </ion-label>
-              <ion-textarea #myInput id="myInput" rows="2" maxLength="500"></ion-textarea>
+              <ion-label stacked>English: </ion-label>
+              <ion-textarea type="text" [(ngModel)]="myInput" id="myInput" rows="4" maxLength="500"></ion-textarea>
             </ion-item>
           </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
+    <ion-row>  
+      <ion-col>
+      </ion-col>
+      <ion-col>
+          <button ion-button (click)="translate()" #eng>
+            Translate!
+          </button>
+      </ion-col>
+      <ion-col>
+        <img class="image ban" src="../../assets/imgs/banana.png"/>
+      </ion-col>
+    </ion-row>
+    <ion-row height="30%"></ion-row>
+    <ion-row class="bottom">  
+        <ion-col col-8>
+          <ion-card class="bgColor">
+            <ion-card-content>
+              <ion-item>
+                <ion-label stacked>Minionese: </ion-label>
+                <ion-textarea readonly type="text" [(ngModel)]="myOutput" id="myOutput" rows="4" maxLength="500"></ion-textarea>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <img class="image" src="../../assets/imgs/minion1.png"/>
+        </ion-col>
+      </ion-row>
+      <ion-row>  
+          <ion-col>
+              <img class="image ban" src="../../assets/imgs/banana.png"/>
+          </ion-col>
+          <ion-col>
+              <button ion-button (click)="voice()">
+                Speak!
+              </button>
+          </ion-col>
+          <ion-col>
+          </ion-col>
+        </ion-row>
   </ion-grid>
 </ion-content>
