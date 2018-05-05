@@ -92,7 +92,7 @@ export class ListPage {
             console.log(itemText);
             //this.callAPI(itemText);
             console.log("text: ");
-            this.listProvider.addItem( itemText + "---" + this.callAPI(itemText));//+ "\n" + this.word);
+            this.listProvider.addItem( itemText + " \n\n " + this.callAPI(itemText));//+ "\n" + this.word);
             console.log("After calls ");
             addListAlert.onDidDismiss( () => {  //annonymous function
                 let addListToast = this.toast.create({  //config object

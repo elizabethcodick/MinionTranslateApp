@@ -4,6 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 //import { Http, Headers, RequestOptions } from '@angular/http';
 import { HttpModule } from '@angular/http';
+import { Media } from '@ionic-native/media';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -53,6 +54,7 @@ import { HttpClientModule } from '@angular/common/http';
     HTTP,
     NativeAudio,
     ListProvider,
+    Media,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

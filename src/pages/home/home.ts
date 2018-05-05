@@ -5,6 +5,7 @@ import { FormsModule, FormBuilder, FormGroup, Validators, AbstractControl } from
 import jQuery from "jquery";
 import { HTTP } from '@ionic-native/http';
 import { NativeAudio } from '@ionic-native/native-audio';
+import { Media, MediaObject } from '@ionic-native/media';
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from '../../app/app.module';
@@ -17,6 +18,7 @@ import { AppModule } from '../../app/app.module';
 export class HomePage {
 
   public text;
+  public playSpeech: MediaObject;
   public myInput = "";
   public myOutput = "";
 
@@ -63,6 +65,7 @@ export class HomePage {
 
       //this.nativeAudio.play('uniqueId1').then(onSuccess, onError);
       this.nativeAudio.play( 'play' );
+      this.playSpeech.play();
       this.nativeAudio.unload('play');
     })
     .catch(error =>{
