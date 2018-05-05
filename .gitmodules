@@ -1,3 +1,6 @@
 [submodule "main/sub"]
 	path = main/sub
 	url = https://github.com/elizabethcodick/MinionTranslateApp
+[submodule "minion"]
+	path = minion
+	url = https://github.com/elizabethcodick/MinionTranslateApp
