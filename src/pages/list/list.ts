@@ -6,7 +6,6 @@ import jQuery from "jquery";
 import { ListProvider } from '../../providers/list/list';
 
 import { HTTP } from '@ionic-native/http';
-//import { Http } from '@angular/http';
 
 
 @IonicPage()
@@ -16,9 +15,8 @@ import { HTTP } from '@ionic-native/http';
 })
 export class ListPage {
 
+  //attribute to us throughout the code
   public items = [];
-  public text;
-  public transWord = [];
   public getWord;
   
 
@@ -29,23 +27,15 @@ export class ListPage {
 
   ionViewDidLoad(){
 
-    this.items = this.listProvider.getLists();
+    this.items = this.listProvider.getLists(); //loads the list of default card for users to see
 
-  }
-
-  public fun(word): void{
-    this.getWord = word;
-    console.log("get word: " + this.getWord);
-  }
-
-  public word(): string{
-    return this.getWord;
   }
 
   callAPI(word){ 
     let getWord;
-    var encodedUrl = encodeURIComponent(word);
+    var encodedUrl = encodeURIComponent(word); //changes the word to go into the link properly
 
+    //setting up post for miniontranslate API
     var settings = {
       "async": false,
       "crossDomain": true,
@@ -58,23 +48,24 @@ export class ListPage {
       }
     }
     var strWord;
-    // jQuery.ajax(settings).done(function (response) {
-    //   console.log(response);
-    // });
 
+    //runs the API
     jQuery.when( jQuery.ajax( settings ) ).done(function( response ) {
       console.log("Respnse: " + response);
-
+      //grabs the translated part of the api
       console.log(response.contents.translated);
       getWord = response.contents.translated;
 
     });
     console.log(getWord);
-    return getWord;
+    return getWord; //returns the translated word to the card
   }
 
+  //pop up for adding in a english to minion word
   openListAlert () {
+    //opens the window
     let addListAlert = this.alertCtrl.create({
+      //what is displayed
       title: "Add a Word",
       message: "Enter a word",
       inputs: [{
@@ -88,12 +79,9 @@ export class ListPage {
         {
           text: "Add Word",
           handler: inputData => {
-            let itemText = inputData.addListInput;
-            console.log(itemText);
-            //this.callAPI(itemText);
-            console.log("text: ");
+            let itemText = inputData.addListInput; //grabs input
+            //sends the inputed word and the translation to the card
             this.listProvider.addItem( itemText + " \n\n " + this.callAPI(itemText));//+ "\n" + this.word);
-            console.log("After calls ");
             addListAlert.onDidDismiss( () => {  //annonymous function
                 let addListToast = this.toast.create({  //config object
                     message: "Word added",
@@ -110,6 +98,7 @@ export class ListPage {
     addListAlert.present();
   }
 
+  //deletes the selected area
   public deleteItem( itemIndex ){
     this.items.splice( itemIndex, 1); //remove from todos
   }

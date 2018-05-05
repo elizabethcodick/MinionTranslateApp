@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
 import { AboutPage } from '../about/about';
-import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
 import { ListPage } from '../list/list';
 
@@ -10,7 +9,7 @@ import { ListPage } from '../list/list';
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
-
+  //links the pages to the tabs at the bottom of the page
   tab1Root = HomePage;
   tab2Root = ListPage;
   tab3Root = AboutPage;
