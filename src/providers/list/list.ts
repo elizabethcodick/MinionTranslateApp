@@ -10,6 +10,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ListProvider {
   private items = [ 
+    //starter example of a sort of note card for the word in eng and minion
     'Hello \n\n Bello'
   ]
 
@@ -17,14 +18,17 @@ export class ListProvider {
     console.log('Hello ListProvider Provider');
   }
 
+  //gets the whole list
   public getLists(){
     return this.items;
   }
 
+  //adds an item to the list
   public addItem( item ){
     this.items.push( item );
   }
 
+  //deletes that current item
   public deleteItem( itemIndex ){
     this.items.splice( itemIndex, 1); //remove from todos
   }
