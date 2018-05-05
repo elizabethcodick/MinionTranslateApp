@@ -7,7 +7,6 @@ import { HttpModule } from '@angular/http';
 import { Media } from '@ionic-native/media';
 
 import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
 import { ListPage } from '../pages/list/list';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -27,7 +26,6 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     MyApp,
     AboutPage,
-    ContactPage,
     HomePage,
     TabsPage,
     ListPage
@@ -43,7 +41,6 @@ import { HttpClientModule } from '@angular/common/http';
   entryComponents: [
     MyApp,
     AboutPage,
-    ContactPage,
     HomePage,
     TabsPage,
     ListPage
