@@ -54,7 +54,7 @@ export class HomePage {
     //	API key: a30a43335c5840f3b187c4e2232041c7
 
     //opening a post call for the text to speech api
-    let url = "http://ganskop.com/proxy/http://api.voicerss.org/?key=a30a43335c5840f3b187c4e2232041c7&hl=en-us&src=Bello"; //+ this.myOutput;
+    let url = "http://ganskop.com/proxy/http://api.voicerss.org/?key=a30a43335c5840f3b187c4e2232041c7&hl=en-us&src=" + this.myOutput;
     console.log("test the code");
     this.http.get( url, {}, {} )
     .then( response => {
